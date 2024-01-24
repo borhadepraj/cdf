@@ -1,0 +1,78 @@
+package codsofttasks;
+
+import java.util.Scanner;
+
+import java.util.Random;
+		 
+	public class Task1 {
+		 
+		  public static void main(String[] args){
+	
+		        Scanner sc = new Scanner(System.in);
+		        
+		        Random randomnum = new Random();
+		 
+		        int guess_no = 6;
+		 
+		        int i, num, guess;
+		        
+		        boolean playAgain;
+		        
+		        do {
+		        	num = randomnum.nextInt(100);
+		        	
+		        	guess=0;
+		        	
+		        	playAgain = false;
+		        	
+		            System.out.println("Hello User!!");
+		        
+		            System.out.println("Let's get started with this exciting NUMBER GAME!!");
+		        
+		            System.out.println("Choose any number between 1 to 100 and remember you have only 6 guesses!!");
+		            
+		            for(i=0;i<guess_no;i++){
+		 
+		            System.out.println("Guess the number:");
+
+		            guess = sc.nextInt();
+		            
+		            if (num==guess) {
+		            	
+		                System.out.println("Well done! You have guessed the number correctly!");
+		                break;
+		            }
+		            else if(num>guess) {
+		            	
+		                System.out.println("Your guess is smaller than the actual number!");
+		            }
+		            else if(num<guess){
+		            	
+		            	System.out.println("Your guess is larger than the actual number!");
+		            }
+		            }
+		 
+		            if (i==guess_no){
+		            
+		            	System.out.println("You have exhausted the number of guesses");
+		 
+		                System.out.println("The correct number was "+num);
+		            }
+		            
+		            System.out.println("Do you want to play again?");
+		            
+		            switch(sc.next()) {
+		            	case "yes": playAgain = true;
+		                            break;
+		                        
+		            	case "no": playAgain = false;
+		            	           System.out.println("Thank you! Visit again");
+		            	           break;
+		            	           
+		                default:
+		                	    break;
+		            }
+		            
+		         }while(playAgain);    
+		    }
+		}
